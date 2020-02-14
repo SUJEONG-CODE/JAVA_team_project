@@ -413,9 +413,9 @@ select::-ms-expand { display: none; }
 
 
 	<!-- Page top Section end -->
-	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/1.jpg">
+	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/mypageBg.jpg">
 		<div class="container"  style="margin: -25px 0 0 250px;">
-			<h2 style="font-size:65px"><strong>나의 문의내역</strong></h2>
+			<h2 style="font-size:65px"><strong>문의내역 확인</strong></h2>
 			<div style=" color:#fff; width:30%">
 			<nav class="site-breadcrumb">
 	            <span class="sb-item active" style="font-size:20px">
@@ -439,7 +439,7 @@ select::-ms-expand { display: none; }
        <div class="col-lg-11" align="center">
             <section class="panel">
               <header class="panel-heading" style="background-color:#7f9ed436;">
-                	   <font color="#39485f">내가쓴글</font>
+                	   <font color="#39485f">문의내역 확인</font>
               </header>   
               <div class="panel-body">   
           <div class="container">

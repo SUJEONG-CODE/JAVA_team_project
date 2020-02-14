@@ -83,13 +83,13 @@
 		  function goPosLogin(){
 		
 			    if( is_empty("[name=business_no]") ){
-			          alert("사업자 번호를 입력를 입력하세요.");
+			          alert("사업자 번호를 입력하세요.");
 			          $("[name=business_no]").val("");
 			          return;
 			       }
 			
 			    if( is_empty("[name=user_pwd]") ){
-			          alert("비밀번호를 입력를 입력하세요.");
+			          alert("비밀번호를 입력하세요.");
 			          $("[name=user_pwd]").val("");
 			          return;
 			       }      
@@ -102,7 +102,7 @@
 					data : $("[name=posLoginForm]").serialize(),
 					success : function(data) {
 						if (data == 1) {
-							alert("로그인 성공");
+							//alert("로그인 성공");
 							location.replace("/posbis/posPayForm.do");
 						} 
 						else if (data == 0) {

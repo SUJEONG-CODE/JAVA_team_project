@@ -327,11 +327,12 @@ select::-ms-expand { display: none; }
                 inputData("[name=chooseBusinessNo]","${chooseBusinessNo}");
              </c:forEach>
          }
-         //기간선택 초기화(전체 기간)
+       //기간선택 초기화(전체 기간)
          function allDate(){
-        	 $('[name=sales_date]').prop("checked",false)
+            $('[name=sales_date]').prop("checked",false);
+          inputData("[name=sales_date_t1]","");
+          inputData("[name=sales_date_t2]","");
          }
-      
 		//--------------------------------------------------------
 		   //로고 클릭시
 		     function goMainForm(){
@@ -582,7 +583,7 @@ select::-ms-expand { display: none; }
 
 
 	<!-- Page top Section end -->
-	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/1.jpg">
+	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/storeBg.jpg">
 		<div class="container"  style="margin: -25px 0 0 250px;">
 			<h2 style="font-size:65px"><strong>매출관리</strong></h2>
 			<div style=" color:#fff; width:30%">
@@ -825,17 +826,17 @@ select::-ms-expand { display: none; }
 				</c:choose>
 				
 				<c:choose>
-				<c:when test="${param.sort=='7 desc'}">
+				<c:when test="${param.sort=='s.sales_date desc'}">
 					<th style="cursor:pointer"
-							onClick="$('[name=sort]').val('7 asc'); goSearch();"><font color="#656565">판매일 ▼</font>
+							onClick="$('[name=sort]').val('s.sales_date asc'); goSearch();"><font color="#656565">판매일 ▼</font>
 				</c:when>
-				<c:when test="${param.sort=='7 asc'}">
+				<c:when test="${param.sort=='s.sales_date asc'}">
 					<th style="cursor:pointer"
-							onClick="$('[name=sort]').val('7 desc'); goSearch();"><font color="#656565">판매일 ▲</font>
+							onClick="$('[name=sort]').val('s.sales_date desc'); goSearch();"><font color="#656565">판매일 ▲</font>
 				</c:when>
 				<c:otherwise>
 					<th style="cursor:pointer"
-							onClick="$('[name=sort]').val('7 asc'); goSearch();"><font color="#656565">판매일</font>
+							onClick="$('[name=sort]').val('s.sales_date asc'); goSearch();"><font color="#656565">판매일</font>
 				</c:otherwise>
 				</c:choose>
                  

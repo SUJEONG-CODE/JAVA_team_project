@@ -644,7 +644,7 @@
  
 		function salesRegForm(){
 		  
-		  if(confirm("결제 할까요?") == true){
+		  if(confirm("결제 하시겠습니까?") == true){
 		  
 			 	for(var i=0; i<$("[name=tablelist] [name=perMenuList]").find("tr").length; i++){
 			 		sales_count1[i]=$("[name=tablelist] [name=perMenuList]").find("tr").eq(i).find(".sales_countCNT").val(); 		

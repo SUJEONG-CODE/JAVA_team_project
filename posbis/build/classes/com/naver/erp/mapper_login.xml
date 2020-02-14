@@ -29,6 +29,7 @@
 		distinct addr_gu  		as "addr_gu"
  	from addr
 	where 1=1 
+	order by addr_gu
 	</select>
  
  
@@ -40,6 +41,7 @@
 		addr_dong 		as "addr_dong"
  	from addr
 	where 1=1 and addr_gu=#{addr_gu} 
+	order by addr_dong
 	</select>
  
 <!--********************************************************************-->
@@ -49,6 +51,7 @@
 		distinct business_type_name1   		as "business_type_name1"
  	from code_business_type
 	where 1=1 
+	order by business_type_name1
 	</select>
   	
 <!--********************************************************************-->
@@ -58,6 +61,7 @@
 		business_type_name2 		as "business_type_name2"
  	from code_business_type
 	where 1=1 and business_type_name1=#{business_type_name1} 
+	order by business_type_name2
 	</select>
 <!--********************************************************************-->
 <!--회원가입 등록 대표자 정보 -->   

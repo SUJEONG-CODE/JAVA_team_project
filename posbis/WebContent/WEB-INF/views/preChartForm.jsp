@@ -114,8 +114,8 @@
   
 <!-- 	<script src="https://code.jquery.com/jquery.min.js"></script> -->
 
-<!--       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
- -->	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script>
 
@@ -661,7 +661,7 @@
 				
 			// 구글 차트 데이터 입력
 			   var data1 = google.visualization.arrayToDataTable([
-			   	 ['Month', 'My Store', 'Others Store'],
+			   	 ['Month', '나의 가게', '주변 가게'],
 		         ['1월',  jjj[0],      kkk[0] ],
 		         ['2월',  jjj[1],      kkk[1] ],
 		         ['3월',  jjj[2],      kkk[2] ],
@@ -745,7 +745,7 @@
 	                        , isStacked: false
 	                        , animation: { //차트가 뿌려질때 실행될 애니메이션 효과
 	                                startup: true,
-	                                duration: 4000,
+	                                duration: 4500,
 	                                easing: 'out' }
 	                         , annotations: {
 	                                       textStyle: {
@@ -1205,7 +1205,7 @@
 
 
 	<!-- Page top Section end -->
-	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/1.jpg">
+	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/chartBg.jpg">
 		<div class="container"  style="margin: -25px 0 0 250px;">
 			<h2 style="font-size:65px"><strong>비교차트</strong></h2>
 			<div style=" color:#fff; width:30%">
@@ -1293,8 +1293,8 @@
 								<div align=right>
 									연&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;도&nbsp;&nbsp; : &nbsp;
 									<select name="changeYear" style="width:200px;height:35px; text-align-last: center;">	
-										<option value="2019" selected>2019 년
-										<option value="2020">2020 년
+										<option value="2020" selected>2020 년
+										<option value="2019">2019 년
 									</select>
 									
 									

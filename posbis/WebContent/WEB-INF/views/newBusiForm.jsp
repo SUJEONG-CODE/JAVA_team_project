@@ -105,11 +105,20 @@
       $(document).ready(function() {
     
     
-         $("[name=business_no]").val("123-45-12345");
-         $("[name=business_name]").val("회원가입테스트 가게");
-         
-         $("[name=addr_detail]").val("회원가입테스드 상세주소");
-         $("[name=store_tel_num]").val("123456");
+    	  $("[name=business_no]").val("128-52-98144");
+          $("[name=business_name]").val("싱싱초밥");
+
+          $("[name=addr_gu]").val("광진구");
+          $("[name=addr_detail]").val("225-1");
+
+          $("[name=business_type_name1]").val("주식류");
+          
+          $("[name=business_open]").val("10");
+          $("[name=business_close]").val("22");
+          
+          $("[name=store_tel_num]").val("02-352-9854");
+          $("[name=user_pwd]").val("1234");
+
         
         
         //  구 검색시 동 구하기 -------------------------------------------------------
@@ -137,6 +146,7 @@
                       }
                      if(addrDongList[0]!=str){
                         $("[name=addr_dong]").prepend("<option value='' selected>"+str+"</option>");   
+                        $("[name=addr_dong]").val("능동");  
                      }
            
                 }   
@@ -146,6 +156,8 @@
              }); /*  $.ajax({  */     
            
         });/* $("[name=addr_gu]").change(function(){ */
+
+        $("[name=addr_gu]").change();
            
            
        //  업종1 검색시 업종2 구하기 -------------------------------------------------------   
@@ -172,6 +184,7 @@
                       }
                      if(businessTypeList2[0]!=str){
                        $("[name=business_type_name2]").prepend("<option value='' selected>"+str+"</option>");   
+                       $("[name=business_type_name2]").val("일식/수산물"); 
                     }
                       
                   }, error : function(){
@@ -182,7 +195,7 @@
            
            
         }); /* $("[name=business_type_name1]").change(function(){ */
-
+        $("[name=business_type_name1]").change();
 
       //--------------------------------------------------open close 시간===========================
         $("[name=business_open]").change(function(){
@@ -202,7 +215,7 @@
  		function checkBusinessNo(){
 
 	         if( is_empty(".business_no") ){
-	              alert(" 사업자번호 입력 요망");
+	              alert(" 사업자번호 입력해주세요.");
 	              $(".business_no").val("");
 	              return;
 	         }
@@ -321,7 +334,7 @@
 		                        , data : $("[name=newBusiForm]").serialize()
 		                        , success : function(newBusiCnt){
 		      						if(newBusiCnt==1){
-		      							alert("추가 성공");
+		      							//alert("추가 성공");
 		      							location.replace("/posbis/myPageForm.do");
 		      						}else if(newBusiCnt==-1){
 		      							alert("비밀번호가 잘못 입력 되었습니다");
@@ -557,7 +570,7 @@
 
 
 	<!-- Page top Section end -->
-	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/1.jpg">
+	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/mypageBg.jpg">
 		<div class="container"  style="margin: -25px 0 0 250px;">
 			<h2 style="font-size:65px"><strong>가게등록</strong></h2>
 			<div style=" color:#fff; width:40%">
@@ -728,7 +741,6 @@
                     <div class="col-sm-6">
                     <input type="text" size="12" name="store_tel_num"
                      class="store_tel_num form-control" />
-                    <span style="float:left">*숫자만 입력하세요</span>
                 </div>
                 </div>
                 
@@ -738,7 +750,8 @@
                     <div class="col-sm-6">
                    <input type="password" name="user_pwd" class="user_pwd form-control"
                      placeholder="PASSWORD"  maxlength="10" required /> 
-                     <span style="float:left">*사용자 확인을 위해 비밀번호를 입력하세요 </span>
+                     <span style="float:left; font-size:13;"><font color="gray">*사용자 확인을 위해 비밀번호를 입력하세요 </font></span>
+                     
               	</div>
               	</div>
          
@@ -746,7 +759,7 @@
 
          <div style="height: 20;"></div>
 
-		<div style="float:right">
+		<div style="float:center">
 		<button class="btn btn-default" type="button" value="저장" onClick="checkNewBusiForm();" >저장 </button> 
  	 	<button class="btn btn-default" type="reset" value="다시작성"  >다시작성 </button> 
 	 	<button class="btn btn-default" type="button" value="취소" onClick="goMyPageForm();" >취소 </button>

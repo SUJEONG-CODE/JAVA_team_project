@@ -386,8 +386,7 @@ label {
                   var today = new Date();
                   var date = $("#calendar").fullCalendar("getDate");
                   convertDate(date);
-                  //var date2 = parseInt(convertDate(date));
-                  var date2 = date.getMonth+1;
+                  var date2 = parseInt(convertDate(date));
                //console.log(date2);
                fn_get_events(date2);
                chartDraw();
@@ -407,8 +406,7 @@ label {
                chartDraw();
 	               var date = $("#calendar").fullCalendar("getDate");
 	               convertDate(date);
-	             //var date2 = parseInt(convertDate(date));
-	               var date2 = date.getMonth+1;
+	             var date2 = parseInt(convertDate(date));
 	            //console.log(date2);
 	            fn_get_events(date2);
 	            //alert("date = " + convertDate(date))
@@ -522,35 +520,36 @@ label {
 	                        console.log("#@#  ====== " +data.data[i]["res_date"].substr(0,10).toString());
 	                        
 	                        var t = "'"+data.data[i]["res_date"].substr(0,10).toString()+"'";
-	                        
-	                        // 예약현황이 normal 이면 버튼 두개 보여줌.	         
-	                        if(data.data[i]["res_result"]=='normal'){
-	      		                //alert("1")
-	                        	$('#resList > tbody').append(
-	 		                           '<tr style="cursor:pointer" >'+
-	 		                                    <!-- 순서번호 -->
-	 		                                    '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');" >'+(i+1)+'</td>' +
-	 		                                    <!-- 각 행의 가게 이름 출력 -->
-	 		                                    '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["business_name"]+'</td>'+
-	 		                                    <!-- 각 행의 예약자 이름 출력 -->
-	 		                                    '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_name"]+'</td>'+
-	 		                                    <!-- 각 행의 예약날짜 출력  -->
-	 		                                    '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_date"]+'</td>'+
-	 		                                    <!-- 각 행의 예약시간 출력  -->
-	 		                                    '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_time"]+'</td>'+
-	 		                                    <!-- 각 행의 예약자 인원수 출력  -->
-	 		                                    '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_guest"]+'</td>'+
-	 		                                    <!-- 각 행의 예약자 휴대폰번호 출력  -->
-	 			                                '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_phone"]+'</td>'+
-	 			                                <!-- 각 행의 예약현황 출력  -->
-	 			                                '<td align=center ><input type=button  value=방문 style="width:50px; height:35px; font-size:20" onClick="changeSuccess('+data.data[i]["r_no"]+');">&nbsp;<input type=button  value=노쇼 style="width:50px; height:35px; font-size:20" onClick="changeNoshow('+data.data[i]["r_no"]+');">'+'</td>'+
-	 			                                <!-- 각 행의 비고란 내용 출력  -->
-	 			                                '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_text"]+'</td>'+
-	 		
-	 		                           '</tr>'
-	 		                        );
+                           var time = "'"+data.data[i]["res_time"].toString()+"'";
+                           
+                           // 예약현황이 normal 이면 버튼 두개 보여줌.            
+                           if(data.data[i]["res_result"]=='normal'){
+                               //alert("1")
+                              $('#resList > tbody').append(
+                                     '<tr style="cursor:pointer" >'+
+                                              <!-- 순서번호 -->
+                                              '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');" >'+(i+1)+'</td>' +
+                                              <!-- 각 행의 가게 이름 출력 -->
+                                              '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["business_name"]+'</td>'+
+                                              <!-- 각 행의 예약자 이름 출력 -->
+                                              '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_name"]+'</td>'+
+                                              <!-- 각 행의 예약날짜 출력  -->
+                                              '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_date"]+'</td>'+
+                                              <!-- 각 행의 예약시간 출력  -->
+                                              '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_time"]+'</td>'+
+                                              <!-- 각 행의 예약자 인원수 출력  -->
+                                              '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_guest"]+'</td>'+
+                                              <!-- 각 행의 예약자 휴대폰번호 출력  -->
+                                             '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_phone"]+'</td>'+
+                                             <!-- 각 행의 예약현황 출력  -->
+                                             '<td align=center ><input type=button  value=방문 style="width:50px; height:35px; font-size:20" onClick="changeSuccess('+data.data[i]["r_no"]+', '+t+','+time+');">&nbsp;<input type=button  value=노쇼 style="width:50px; height:35px; font-size:20" onClick="changeNoshow('+data.data[i]["r_no"]+', '+t+','+time+');">'+'</td>'+
+                                             <!-- 각 행의 비고란 내용 출력  -->
+                                             '<td align=center onClick="goResUpDelForm('+data.data[i]["r_no"]+', '+t+');">'+data.data[i]["res_text"]+'</td>'+
+          
+                                     '</tr>'
+                                  );
 
-		                    }
+                          }
 	                        else{
 		                        //alert("2")
 		                        
@@ -619,80 +618,150 @@ label {
 
 //----------------------------------------------------------------------------------------------------------------------------
 
-            // 확인 버튼 클릭 시
-               function changeSuccess(number){
+               // 확인 버튼 클릭 시
+                  function changeSuccess(number, res_date, res_time){
+                  //alert("1");
+                  var data = "&r_no="+number;
+            
+                      var now_date = new Date();
+                    
+                      //alert(data);
+                      //alert(res_date);
+                      //alert(now_date);
+                      //alert(res_time);
 
-					var data = "&r_no="+number;
-                   //alert(data);
+                  var yyyy = res_date.substr(0,4);
+                  var mm = res_date.substr(5,2);
+                  var dd = res_date.substr(8,2);
+                      var hh =  res_time.substr(3,2);
+                      var mi = res_time.substr(6,2);
 
-                   if(confirm("확인 완료 하시겠습니까?")==false) {
- 						return;
- 					}
- 	        	 else{
- 	            
-            	   $.ajax({
-	                   url: '/posbis/changeSuccessProc.do' 
-	                   ,Type: "post" 
-	                   ,data : data
-	                   ,dataType:"json"
-	                   ,success : function(updateChangeSuccess){
-	                      	                      
-	                	 //alert("조회");
-	                       chartDraw();
-	       	               var date = $("#calendar").fullCalendar("getDate");
-	       	               convertDate(date);
-	       	               var date2 = parseInt(convertDate(date));
-	        	            //alert(date2);
-	        	            fn_get_events(date2);
-	        	            //alert(selectDate);
-	        	            goResList(selectDate);
+                      //alert(yyyy+mm+dd+hh+mi);
+                      if(res_time.substr(0,2)=='오후' && hh != '12'){
+                     hh = hh*1;
+                         hh = hh+12;
+                      }
+                      //alert(yyyy+mm+dd+hh+mi);
+                  res_date = new Date(yyyy, mm-1, dd, hh, mi);
 
-	                   }
-	                   ,error:function(request,status,error){
-	                        console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-	                    }
-	                });
- 	        	 }
-         			
-               }
+                      //alert(res_date);
+                      if( res_date > now_date){
+                     alert("예약 시간이 지난 후 현황 선택이 가능합니다.");
+                     //alert("res_date==>  "+res_date);
+                     //alert("now_date==>  "+now_date);
+                       }else{
+                      
 
-            // 노쇼 버튼 클릭 시
-               function changeNoshow(number){
-            	   var data = "&r_no="+number;
-                  // alert(data);
+                            if(confirm("확인 완료 하시겠습니까?")==false) {
+                            return;
+                         }
+                          else{
+                         
+                           $.ajax({
+                               url: '/posbis/changeSuccessProc.do' 
+                               ,Type: "post" 
+                               ,data : data
+                               ,dataType:"json"
+                               ,success : function(updateChangeSuccess){
+                                                           
+                                //alert("조회");
+                                   chartDraw();
+                                     var date = $("#calendar").fullCalendar("getDate");
+                                     convertDate(date);
+                                     var date2 = parseInt(convertDate(date));
+                                   //alert(date2);
+                                   fn_get_events(date2);
+                                   //alert(selectDate);
+                                   goResList(selectDate);
+         
+                               }
+                               ,error:function(request,status,error){
+                                    console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                                }
+                            });
+                         }
+                           
+                        }
+                 }
 
-                   if(confirm("노쇼로 등록하시겠습니까?")==false) {
- 						return;
- 					}
- 	        	 else{
- 	            
-            	   $.ajax({
-	                   url: '/posbis/changeNoshowProc.do' 
-	                   ,Type: "post" 
-	                   ,data : data
-	                   ,dataType:"json"
-	                   ,success : function(updateChangeNoshow){
-	                      	                      
-	                	 //alert("조회");
-	                       chartDraw();
-	       	               var date = $("#calendar").fullCalendar("getDate");
-	       	               convertDate(date);
-	       	               var date2 = parseInt(convertDate(date));
-	        	            //console.log(date2);
-	        	            fn_get_events(date2);
-	        	            goResList(selectDate);
+               // 노쇼 버튼 클릭 시
+                  function changeNoshow(number, res_date, res_time){
+                     var data = "&r_no="+number;
+                     // alert(data);
 
-	                   }
-	                   ,error:function(request,status,error){
-	                        console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-	                    }
-	                });
- 	        	 }
-               }
+                      var now_date = new Date();
+                       
+                         //alert(data);
+                         //alert(res_date);
+                         //alert(now_date);
+                         //alert(res_time);
 
+                     var yyyy = res_date.substr(0,4);
+                     var mm = res_date.substr(5,2);
+                     var dd = res_date.substr(8,2);
+                         var hh =  res_time.substr(3,2);
+                         var mi = res_time.substr(6,2);
+
+                         //alert(yyyy+mm+dd+hh+mi);
+                         if(res_time.substr(0,2)=='오후'  && hh != '12'){
+                        hh = hh*1;
+                            hh = hh+12;
+                         }
+                         //alert(yyyy+mm+dd+hh+mi);
+                     res_date = new Date(yyyy, mm-1, dd, hh, mi);
+
+                         //alert(res_date);
+                         if( res_date > now_date){
+                        alert("예약 시간이 지난 후 현황 선택이 가능합니다.");
+                          }else{
+                     
+                     
+                               if(confirm("노쇼로 등록하시겠습니까?")==false) {
+                               return;
+                            }
+                            else{
+                            
+                              $.ajax({
+                                  url: '/posbis/changeNoshowProc.do' 
+                                  ,Type: "post" 
+                                  ,data : data
+                                  ,dataType:"json"
+                                  ,success : function(updateChangeNoshow){
+                                                              
+                                   //alert("조회");
+                                      chartDraw();
+                                        var date = $("#calendar").fullCalendar("getDate");
+                                        convertDate(date);
+                                        var date2 = parseInt(convertDate(date));
+                                      //console.log(date2);
+                                      fn_get_events(date2);
+                                      goResList(selectDate);
+            
+                                  }
+                                  ,error:function(request,status,error){
+                                       console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                                   }
+                               });
+                            }
+                           }
+                   }
+                   
 
             // 예약하기 팝업 띄우기
                function wrapWindowByMask(){
+
+            	   //시연 데이터 넣기
+                   $('[name=pop_businessNo]').val("543-21-54321");
+                    $('[name=res_name]').val("홍길동");
+                    $('[name=res_year]').val("2020");
+                    $('[name=res_month]').val("02");
+                    $('[name=res_day]').val("29");
+                    $('[name=res_time]').val("15:00");
+                    $('[name=res_guest]').val("3");
+                    $('[name=phone1]').val("010");
+                    $('[name=phone2]').val("1234");
+                    $('[name=phone3]').val("5678");
+                   
                    
                    //화면의 높이와 너비를 구한다.
                    var maskHeight = $(document).height();  
@@ -848,7 +917,7 @@ label {
                      }
                   // [메뉴 등록 행 적용 개수]가 1개가 아니면 경고하기
                      else{
-                        alert("메뉴 등록 실패! 관리자에게 문의 바랍니다.");
+                        alert("예약 등록 실패! 관리자에게 문의 바랍니다.");
                      }
                   }
                   // 서버의 응답을 못 받았을 경우 실행할 익명함수 설정
@@ -1152,18 +1221,18 @@ label {
   
                            var options = {
                              width: 500, height: 300,
-                             redFrom: 70, redTo: 100, //노쇼비율 70~100%은 적색으로 지정
-                             yellowFrom:20, yellowTo: 70, //노쇼비율 20~70%은 황색으로 지정
-                             greenFrom:0, greenTo: 20,	//노쇼비율 0~20%은 녹색으로 지정
+                             redFrom: 75, redTo: 100, //노쇼비율 70~100%은 적색으로 지정
+                             yellowFrom:25, yellowTo: 75, //노쇼비율 20~70%은 황색으로 지정
+                             greenFrom:0, greenTo: 25,	//노쇼비율 0~20%은 녹색으로 지정
                              minorTicks: 5,	//눈금 표시선
                              min:0, max:100	//max값은 전체 예약건수 or 인원수
                              };
                            
                            var options2 = {
                              width: 500, height: 300,
-                             redFrom: 70, redTo: 100, //노쇼비율 70~100%은 적색으로 지정
-                             yellowFrom:20, yellowTo: 70, //노쇼비율 20~70%은 황색으로 지정
-                             greenFrom:0, greenTo: 20,	//노쇼비율 0~20%은 녹색으로 지정
+                             redFrom: 75, redTo: 100, //노쇼비율 70~100%은 적색으로 지정
+                             yellowFrom:25, yellowTo: 75, //노쇼비율 20~70%은 황색으로 지정
+                             greenFrom:0, greenTo: 25,	//노쇼비율 0~20%은 녹색으로 지정
                              minorTicks: 5,	//눈금 표시선
                              min:0, max:100	//max값은 전체 예약건수 or 인원수
                            };
@@ -1405,7 +1474,7 @@ label {
 
 
 <!-- Page top Section end -->
-   <section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/1.jpg">
+   <section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/revBg.jpg">
       <div class="container"  style="margin: -25px 0 0 250px;">
          <h2 style="font-size:65px"><strong>예약목록</strong></h2>
          <div style=" color:#fff; width:30%">

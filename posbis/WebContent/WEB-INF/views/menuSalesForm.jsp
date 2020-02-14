@@ -331,7 +331,9 @@ select::-ms-expand { display: none; }
 
          //기간선택 초기화(전체 기간)
          function allDate(){
-        	 $('[name=sales_date]').prop("checked",false)
+            $('[name=sales_date]').prop("checked",false);
+          inputData("[name=sales_date_t1]","");
+          inputData("[name=sales_date_t2]","");
          }
 		//--------------------------------------------------------
 		   //로고 클릭시
@@ -585,7 +587,7 @@ select::-ms-expand { display: none; }
 
 
 	<!-- Page top Section end -->
-	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/1.jpg">
+	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/storeBg.jpg">
 		<div class="container"  style="margin: -25px 0 0 250px;">
 			<h2 style="font-size:65px"><strong>매출관리</strong></h2>
 			<div style=" color:#fff; width:30%">

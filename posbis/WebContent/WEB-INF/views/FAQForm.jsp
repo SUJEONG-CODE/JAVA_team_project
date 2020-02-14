@@ -365,7 +365,7 @@ UTF-8 인코딩 방식은 한글을 포함 전세계 모든 문자열을 부호�
 
 	<!-- Page top Section end -->
 	<section class="page-top-section set-bg"
-		data-setbg="resources/bootstrap/img/page-top-bg/1.jpg">
+		data-setbg="resources/bootstrap/img/page-top-bg/qnaBg.jpg">
 		<div class="container"  style="margin: -25px 0 0 250px;">
 			<h2 style="font-size:65px"><strong>FAQ</strong></h2>
 			<div style=" color:#fff; width:30%">

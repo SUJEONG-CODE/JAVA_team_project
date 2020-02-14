@@ -846,7 +846,7 @@ var customOverlays = [];
 
    
    <!-- Page top Section end -->
-   <section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/1.jpg">
+   <section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/chartBg.jpg">
       <div class="container"  style="margin: -25px 0 0 250px;">
          <h2 style="font-size:65px"><strong>시장분석</strong></h2>
          <div style=" color:#fff; width:30%">
@@ -872,7 +872,7 @@ var customOverlays = [];
        <div class="col-lg-11" align="center">
             <section class="panel">
               <header class="panel-heading" style="background-color:#7f9ed436;">
-                      <font color="#39485f">시장 검색</font>
+                      <font color="#39485f">시장 분석</font>
               </header>
               
               <div class="panel-body">

@@ -118,7 +118,7 @@ from(select
       from sales
       where 1=1 and business_no=#{business_no}
     group by sales_date 
-    order by 1 desc)xxx) where <![CDATA[RNUM >= ${selectPageNo*rowCntPerPage-rowCntPerPage + 1}  
+    order by to_char(sales_date, 'yyyy.mm.dd hh24:mi:ss') desc)xxx) where <![CDATA[RNUM >= ${selectPageNo*rowCntPerPage-rowCntPerPage + 1}  
 			and RNUM <= ${selectPageNo*rowCntPerPage}]]>
  </select>
 <!-- 총개수  --> 

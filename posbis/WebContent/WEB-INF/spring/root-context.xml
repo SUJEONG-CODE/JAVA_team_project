@@ -34,8 +34,8 @@
 	<!--**********************************************************************************************-->
 	<bean  id="basicDataSource"  class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-	        <!-- <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE" /> --> <!-- localhost -->
-	        <property name="url" value="jdbc:oracle:thin:@192.168.1.34:1521:XE" />		<!-- team -->
+	        <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE" /> <!-- localhost -->
+	        <!-- <property name="url" value="jdbc:oracle:thin:@192.168.0.3:1521:XE" /> -->	 	<!-- team -->
 	        
 	        <property name="username" value="king" />
 	        <property name="password" value="k123" />

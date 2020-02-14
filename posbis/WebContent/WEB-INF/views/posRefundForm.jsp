@@ -234,7 +234,7 @@ function startTime() {
  
 	$(document).on('click','.refundButton',function() {
 		
-		if(confirm("결제 취소 할까요?") == true){
+		if(confirm("결제 취소 하시겠습니까?") == true){
 			var refundTrdate=$(".refundTableList").find("tbody").find("tr").find("[name=sales_date]").val()
 	 
  
@@ -275,7 +275,7 @@ function startTime() {
 			 
 		}else{
 			
-			 alert("취소되었습니다"); 
+			 alert("취소되었습니다."); 
 			location.replace("/posbis/posRefundForm.do"); 
 			
 			

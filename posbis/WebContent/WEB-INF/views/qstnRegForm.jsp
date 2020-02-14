@@ -160,7 +160,7 @@
                , success : function(qstnRegCnt){
                   // 게시판 입력 행 적용 개수가 1개면(=insert가 한번 성공했다는 뜻)
                   if(qstnRegCnt == 1){
-                     alert("새 글 등록 성공!");
+                     //alert("새 글 등록 성공!");
                  location.replace("/posbis/qstnForm.do");
                   }
                   // 게시판 새 글 입력 행 적용 개수가 1개가 아니면 경고하기
@@ -381,7 +381,7 @@
 	
 	<!-- Page top Section end -->
 	<section class="page-top-section set-bg"
-		data-setbg="resources/bootstrap/img/page-top-bg/1.jpg">
+		data-setbg="resources/bootstrap/img/page-top-bg/qnaBg.jpg">
 		<div class="container"  style="margin: -25px 0 0 250px;">
 			<h2 style="font-size:65px"><strong>Q&A</strong></h2>
 			<div style=" color:#fff; width:30%">

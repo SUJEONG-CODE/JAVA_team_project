@@ -236,7 +236,7 @@ $(document).ready(function(){
 					// 메뉴등록여부 묻기
 					
 					if(menuRegCnt==1){
-						alert("메뉴 등록 성공!");
+						//alert("메뉴 등록 성공!");
 						location.replace("/posbis/menuForm.do");
 					}
 				// [메뉴 등록 행 적용 개수]가 1개가 아니면 경고하기
@@ -455,7 +455,7 @@ $(document).ready(function(){
 
 
 	<!-- Page top Section end -->
-	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/1.jpg">
+	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/storeBg.jpg">
 		<div class="container"  style="margin: -25px 0 0 250px;">
 			<h2 style="font-size:65px"><strong>메뉴등록</strong></h2>
 			<div style=" color:#fff; width:35%">

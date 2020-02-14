@@ -289,7 +289,7 @@
                      , isStacked: false
                      , animation: { //차트가 뿌려질때 실행될 애니메이션 효과
                          startup: true,
-                         duration: 3800,
+                         duration: 6500,
                          easing: 'out' }
                    , annotations: {
 	                    textStyle: {
@@ -336,7 +336,7 @@
 		        height: "100%",
                 animation: { //차트가 뿌려질때 실행될 애니메이션 효과
                     startup: true,
-                    duration: 4300,
+                    duration: 4500,
                     easing: 'out' }
 
 	          }; 

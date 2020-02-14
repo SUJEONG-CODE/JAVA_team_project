@@ -303,9 +303,9 @@ function goInfoUpdateForm(){
 //=============================================김수민============================================================
 
 		function delBusi(){
-			var userPwd = prompt('해당 가게를 삭제하기 위해 본인 확인이 필요합니다.','사용자 암호를 입력해주세요');
+			var userPwd = prompt('해당 가게를 삭제하기 위해 본인 확인이 필요합니다.','사용자 비밀번호를 입력해주세요.');
 			$("[name=myPageForm] [name=user_pwd]").val(userPwd+'');
-			if(userPwd==null){ alert("삭제 취소"); }
+			if(userPwd==null){ alert("삭제를 취소했습니다."); }
 			else{
 		         $.ajax({
 	                url : "/posbis/delBusiProc.do"
@@ -414,7 +414,7 @@ function goInfoUpdateForm(){
 
 	
 	<!-- Page top Section end -->
-	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/1.jpg">
+	<section class="page-top-section set-bg" data-setbg="resources/bootstrap/img/page-top-bg/mypageBg.jpg">
 		<div class="container"  style="margin: -25px 0 0 250px;">
 			<h2 style="font-size:65px"><strong>내정보 보기</strong></h2>
 			<div style=" color:#fff; width:30%">
